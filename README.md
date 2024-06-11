@@ -7,7 +7,7 @@ En el siguiente repocitorio se presentan los avances tanto del hardware, softwar
 
 Carpetas que integran el proyecto:
 <ul>
-    <li>Hardware</li>
-    <li>Sonftware</li>
-    <li>Pruebas</li>
+    <li><a src="/HARDWARE/Hardware.md">Hardware</a></li>
+    <li><a src="/SOFTWARE/Software.md">Sonftware</a></li>
+    <li><a src="/PRUEBAS/Pruebas.md">Pruebas</a></li>
 </ul>
