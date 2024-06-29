@@ -12,6 +12,6 @@ Carpetas que integran el proyecto:
     <li><a href="PRUEBAS/Pruebas.md">Pruebas</a></li>
 </ul>
 
-###### Instituto Politécnico Nacional<b><i>(IPN)</i></b>
-###### Escuela Superior de Ingeniería Mecánica y Eléctrica Unidad Zacatenco<b><i>(ESIME Zacatenco)</i></b>
-###### Ingeniería en Comunicaciones y Electrónica<b><i>(ICE)</i></b>
+###### Instituto Politécnico Nacional <b><i>(IPN)</i></b>
+###### Escuela Superior de Ingeniería Mecánica y Eléctrica Unidad Zacatenco <b><i>(ESIME Zacatenco)</i></b>
+###### Ingeniería en Comunicaciones y Electrónica <b><i>(ICE)</i></b>
