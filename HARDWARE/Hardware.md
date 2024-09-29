@@ -1,5 +1,5 @@
 <div>
-    <img src="/IMGS/Banner Hardware.png" />
+    <img src="/IMGS/Inicio/Banner Hardware.png"/>
 </div>
 
 # HARDWARE :tv:

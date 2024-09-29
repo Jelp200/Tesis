@@ -1,5 +1,5 @@
 <div>
-    <img src="IMGS/Banner.png" />
+    <img src="IMGS/Inicio/Banner.png"/>
 </div>
 
 # AVANCE DE TESIS :books:

@@ -1,5 +1,5 @@
 <div>
-    <img src="/IMGS/Banner Software.png" />
+    <img src="/IMGS/Inicio/Banner Software.png" />
 </div>
 
 # SOFTWARE :computer:

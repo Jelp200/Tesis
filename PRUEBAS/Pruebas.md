@@ -1,5 +1,5 @@
 <div>
-    <img src="/IMGS/Banner Pruebas.png" />
+    <img src="/IMGS/Inicio/Banner Pruebas.png" />
 </div>
 
 # PRUEBAS :heavy_check_mark:
