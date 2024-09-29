@@ -10,6 +10,7 @@ Carpetas que integran el proyecto:
     <li><a href="HARDWARE/Hardware.md">Hardware</a></li>
     <li><a href="SOFTWARE/Software.md">Software</a></li>
     <li><a href="PRUEBAS/Pruebas.md">Pruebas</a></li>
+    <li><a href="ESCRITO/Escrito.md">Escrito</a></li>
 </ul>
 
 ###### Instituto Politécnico Nacional <b><i>(IPN)</i></b>
