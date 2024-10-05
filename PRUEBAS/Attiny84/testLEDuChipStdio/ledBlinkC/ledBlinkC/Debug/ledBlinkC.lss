@@ -3,29 +3,29 @@ ledBlinkC.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000007c  00000000  00000000  00000054  2**1
+  0 .text         0000008e  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  000000d0  2**0
+  1 .data         00000000  00800060  00800060  000000e2  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  000000d0  2**0
+  2 .comment      00000030  00000000  00000000  000000e2  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000100  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000114  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000020  00000000  00000000  0000013c  2**0
+  4 .debug_aranges 00000020  00000000  00000000  00000150  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000564  00000000  00000000  0000015c  2**0
+  5 .debug_info   00000564  00000000  00000000  00000170  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 000004d0  00000000  00000000  000006c0  2**0
+  6 .debug_abbrev 000004d0  00000000  00000000  000006d4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000245  00000000  00000000  00000b90  2**0
+  7 .debug_line   0000025f  00000000  00000000  00000ba4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000024  00000000  00000000  00000dd8  2**2
+  8 .debug_frame  00000024  00000000  00000000  00000e04  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000330  00000000  00000000  00000dfc  2**0
+  9 .debug_str    00000330  00000000  00000000  00000e28  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000048  00000000  00000000  0000112c  2**0
+ 10 .debug_loc    00000048  00000000  00000000  00001158  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000010  00000000  00000000  00001174  2**0
+ 11 .debug_ranges 00000010  00000000  00000000  000011a0  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -57,71 +57,81 @@ Disassembly of section .text:
   2a:	de bf       	out	0x3e, r29	; 62
   2c:	cd bf       	out	0x3d, r28	; 61
   2e:	02 d0       	rcall	.+4      	; 0x34 <main>
-  30:	23 c0       	rjmp	.+70     	; 0x78 <_exit>
+  30:	2c c0       	rjmp	.+88     	; 0x8a <_exit>
 
 00000032 <__bad_interrupt>:
   32:	e6 cf       	rjmp	.-52     	; 0x0 <__vectors>
 
 00000034 <main>:
+#include <util/delay.h>
 
-
-int main(void)
-{
-	//* Pin PA0 como salida
-	DDRA |= (1 << DDA0);
+//* FUNCIÓN PRINCIPAL
+int main(void) {
+	// Configuración de pines de salida
+	DDRA |= (1 << DDA0);					// PA0 como salida
   34:	8a b3       	in	r24, 0x1a	; 26
   36:	81 60       	ori	r24, 0x01	; 1
   38:	8a bb       	out	0x1a, r24	; 26
-	DDRA |= (1 << DDA1);
+	DDRA |= (1 << DDA1);					// PA1 como salida
   3a:	8a b3       	in	r24, 0x1a	; 26
   3c:	82 60       	ori	r24, 0x02	; 2
   3e:	8a bb       	out	0x1a, r24	; 26
-	
+	DDRA |= (1 << DDA2);					// PA2 como salida
+  40:	8a b3       	in	r24, 0x1a	; 26
+  42:	84 60       	ori	r24, 0x04	; 4
+  44:	8a bb       	out	0x1a, r24	; 26
 	
     /* Replace with your application code */
-    while (1) 
-    {
-		PORTA |= (1 << PORTA1);
-  40:	8b b3       	in	r24, 0x1b	; 27
-  42:	82 60       	ori	r24, 0x02	; 2
-  44:	8b bb       	out	0x1b, r24	; 27
-		PORTA |= (1 << PORTA0);				// Pin alto (LED encendido)
+    while(1) {
+		PORTA |= (1 << PORTA1);				// Pin 1 alto (LED siempre encendido)
   46:	8b b3       	in	r24, 0x1b	; 27
-  48:	81 60       	ori	r24, 0x01	; 1
+  48:	82 60       	ori	r24, 0x02	; 2
   4a:	8b bb       	out	0x1b, r24	; 27
+		PORTA &= ~(1 << PORTA2);			// Pin 2 bajo (LED apagado)
+  4c:	8b b3       	in	r24, 0x1b	; 27
+  4e:	8b 7f       	andi	r24, 0xFB	; 251
+  50:	8b bb       	out	0x1b, r24	; 27
+		PORTA |= (1 << PORTA0);				// Pin 0 alto (LED encendido)
+  52:	8b b3       	in	r24, 0x1b	; 27
+  54:	81 60       	ori	r24, 0x01	; 1
+  56:	8b bb       	out	0x1b, r24	; 27
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
-  4c:	2f eb       	ldi	r18, 0xBF	; 191
-  4e:	87 e2       	ldi	r24, 0x27	; 39
-  50:	99 e0       	ldi	r25, 0x09	; 9
-  52:	21 50       	subi	r18, 0x01	; 1
-  54:	80 40       	sbci	r24, 0x00	; 0
-  56:	90 40       	sbci	r25, 0x00	; 0
-  58:	e1 f7       	brne	.-8      	; 0x52 <__SREG__+0x13>
-  5a:	00 c0       	rjmp	.+0      	; 0x5c <__SREG__+0x1d>
-  5c:	00 00       	nop
+  58:	2f eb       	ldi	r18, 0xBF	; 191
+  5a:	87 e2       	ldi	r24, 0x27	; 39
+  5c:	99 e0       	ldi	r25, 0x09	; 9
+  5e:	21 50       	subi	r18, 0x01	; 1
+  60:	80 40       	sbci	r24, 0x00	; 0
+  62:	90 40       	sbci	r25, 0x00	; 0
+  64:	e1 f7       	brne	.-8      	; 0x5e <__SREG__+0x1f>
+  66:	00 c0       	rjmp	.+0      	; 0x68 <__SREG__+0x29>
+  68:	00 00       	nop
 		_delay_ms(3000);					// 1s delay
-		PORTA &= ~(1 << PORTA0);			// Pin bajo (LED apagado)
-  5e:	8b b3       	in	r24, 0x1b	; 27
-  60:	8e 7f       	andi	r24, 0xFE	; 254
-  62:	8b bb       	out	0x1b, r24	; 27
-  64:	2f eb       	ldi	r18, 0xBF	; 191
-  66:	87 e2       	ldi	r24, 0x27	; 39
-  68:	99 e0       	ldi	r25, 0x09	; 9
-  6a:	21 50       	subi	r18, 0x01	; 1
-  6c:	80 40       	sbci	r24, 0x00	; 0
-  6e:	90 40       	sbci	r25, 0x00	; 0
-  70:	e1 f7       	brne	.-8      	; 0x6a <__SREG__+0x2b>
-  72:	00 c0       	rjmp	.+0      	; 0x74 <__SREG__+0x35>
-  74:	00 00       	nop
-  76:	e4 cf       	rjmp	.-56     	; 0x40 <__SREG__+0x1>
+		PORTA |= (1 << PORTA2);				// Pin 2 alto (LED encendido)
+  6a:	8b b3       	in	r24, 0x1b	; 27
+  6c:	84 60       	ori	r24, 0x04	; 4
+  6e:	8b bb       	out	0x1b, r24	; 27
+		PORTA &= ~(1 << PORTA0);			// Pin 0 bajo (LED apagado)
+  70:	8b b3       	in	r24, 0x1b	; 27
+  72:	8e 7f       	andi	r24, 0xFE	; 254
+  74:	8b bb       	out	0x1b, r24	; 27
+  76:	2f eb       	ldi	r18, 0xBF	; 191
+  78:	87 e2       	ldi	r24, 0x27	; 39
+  7a:	99 e0       	ldi	r25, 0x09	; 9
+  7c:	21 50       	subi	r18, 0x01	; 1
+  7e:	80 40       	sbci	r24, 0x00	; 0
+  80:	90 40       	sbci	r25, 0x00	; 0
+  82:	e1 f7       	brne	.-8      	; 0x7c <__SREG__+0x3d>
+  84:	00 c0       	rjmp	.+0      	; 0x86 <__SREG__+0x47>
+  86:	00 00       	nop
+  88:	de cf       	rjmp	.-68     	; 0x46 <__SREG__+0x7>
 
-00000078 <_exit>:
-  78:	f8 94       	cli
+0000008a <_exit>:
+  8a:	f8 94       	cli
 
-0000007a <__stop_program>:
-  7a:	ff cf       	rjmp	.-2      	; 0x7a <__stop_program>
+0000008c <__stop_program>:
+  8c:	ff cf       	rjmp	.-2      	; 0x8c <__stop_program>
