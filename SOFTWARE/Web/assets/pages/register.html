@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--
+                            ########     ########      ########      ########     ########            
+                          ##########    ##########    ##########   ##########    ##########           
+                         ###########   ##########   ###########   ###########   ##########      © GRADUS TECHNOLOGIES 2024
+                        ##########   ###########   ###########   ##########   ###########
+                      ###########   ###########   ##########   ###########   ###########        Departamento encargado: Computo
+                     ###########   ##########   ###########   ###########   ##########
+                    ##########    ##########   ##########    ##########    ##########           Diseñado por: Jelp200 / CEO
+                  ###########   ###########   ##########   ###########   ###########
+                 ##########    ##########    ##########   ##########    ##########              Cd. Nezahualcóyotl, México
+                ##########    ##########   ###########   ##########    ##########
+              ###########   ###########   ##########   ###########   ###########                Archivo: Register.html
+             ###########   ##########   ###########   ###########   ##########                        
+            ##########   ###########   ###########   ##########   ###########                         
+           ##########    ##########   ##########    ##########    ##########                          
+            ########     ########      ########      ########     ########                                                
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../imgs/favicon.svg">
+    <title>Sistema GULU | GRADUS TECHNOLOGIES</title>
+    <!-- Remix Icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <!-- Splide JS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <!-- Link a CSS -->
+    <link rel="stylesheet" href="../css/styleRegister.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="Navbar">
+        <div class="logo">
+            <a href="../../index.html">
+                GU<span>LU</span>
+            </a>
+        </div>
+        <i class="ri-menu-fill" id="toggle"></i>
+        <ul class="menu">
+            <li><a href="../../index.html#Inicio">Inicio</a></li>
+            <li><a href="../../index.html#Nosotrs">Nosotros</a></li>
+            <li><a href="../../index.html#Clientes">Clientes</a></li>
+            <li><a href="../../index.html#Testimoniales">Testimoniales</a></li>
+            <li><a href="../../index.html#Contacto">Contacto</a></li>
+            <li>
+                <button class="btn">
+                    <a href="login.html">Iniciar Sesión</a>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="register-container">
+        <h1>REGISTRO</h1>
+        <p>Se parte de esta gran familia y del futuro de la seguridad</p>
+
+        <form>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Ingrese su nombre completo" required>
+
+            <label for="correo">Correo</label>
+            <div class="input-container">
+                <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
+                <span class="email-icon">📧</span>
+            </div>
+
+            <label for="password">Contraseña</label>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Ingrese una contraseña" required>
+                <span class="toggle-password">👁️</span>
+            </div>
+
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="privacy" required>
+                    <label for="privacy">
+                        Estoy de acuerdo con el <a href="#">aviso de privacidad</a>
+                    </label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="updates">
+                    <label for="updates">Deseo recibir correos con actualizaciones</label>
+                </div>
+            </div>
+
+            <button type="submit" class="register-button">Crear cuenta</button>
+        </form>
+    </div>
+
+    <!-- Splide JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <!-- Splide JS Auto Scroll CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <!-- Script -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
