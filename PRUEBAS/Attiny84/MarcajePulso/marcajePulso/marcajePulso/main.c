@@ -15,7 +15,6 @@
 //* DEFINICION DE VELOCIDAD DE RELOJ
 #define F_CPU   1000000UL                           // 1MHz
 
-
 //* DIRECTIVAS DE PREPROCESADOR
 #include <avr/io.h>
 #include <util/delay.h>
