@@ -359,15 +359,15 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x513
+.debug_info     0x00000000      0x510
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x420 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.10.348/gcc/dev/attiny84a/avr25/crtattiny84a.o
- .debug_info    0x00000420       0xf3 main.o
+ .debug_info    0x00000420       0xf0 main.o
 
-.debug_abbrev   0x00000000      0x486
+.debug_abbrev   0x00000000      0x477
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x3e8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATtiny_DFP/1.10.348/gcc/dev/attiny84a/avr25/crtattiny84a.o
- .debug_abbrev  0x000003e8       0x9e main.o
+ .debug_abbrev  0x000003e8       0x8f main.o
 
 .debug_line     0x00000000      0x21c
  *(.debug_line .debug_line.* .debug_line_end)
@@ -384,9 +384,9 @@ END GROUP
  .debug_str     0x00000173      0x19f main.o
                                 0x1d3 (size before relaxing)
 
-.debug_loc      0x00000000       0x34
+.debug_loc      0x00000000       0x4c
  *(.debug_loc)
- .debug_loc     0x00000000       0x34 main.o
+ .debug_loc     0x00000000       0x4c main.o
 
 .debug_macinfo
  *(.debug_macinfo)
