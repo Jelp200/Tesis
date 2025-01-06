@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="../imgs/favicon.svg">
+    <title>GRADUS | Panel</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/panelStyles.css">
+    <!-- Remix icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <a href="../pages/inicio.html"><img src="../imgs/index/logoBlanco.svg" alt=""></a>
+        </div>
+        <div class="bars">
+            <i class="ri-menu-2-line"></i>
+        </div>
+    </nav>
+
+    <!-- Panel -->
+    <div class="container">
+        <div class="panel" id="enterDetails">
+            <h1>Ingresar Detalles</h1>
+            <label>Nombre del elemento</label>
+            <input id="userName" type="text" placeholder="Ejemplo: Juan Pérez">
+
+            <label>Fecha de nacimiento (DD/MM/AA)</label>
+            <input id="birthDate" type="text" placeholder="Ejemplo: 01/01/00">
+
+            <label>Cuadrante</label>
+            <input id="sectorName" type="text" placeholder="Ejemplo: C-XX">
+
+            <label>Identificador (ID)</label>
+            <input id="userId" type="text" placeholder="Ejemplo: 1234">
+            
+            <div class="buttons">
+                <button id="saveButton" class="blue-button">INGRESAR</button>
+                <button id="updateButton" class="gray-button">ACTUALIZAR</button>
+                <button id="deleteButton" class="red-button">ELIMINAR</button>
+            </div>
+        </div>
+
+        <div class="panel" id="findDetails">
+            <h1>Encontrar por ID</h1>
+            <label>Identificador (ID)</label>
+            <input id="searchIdNumber" type="text" placeholder="Ejemplo: 1234">
+
+            <button id="searchButton" class="blue-button">BUSCAR</button>
+
+            <div class="results">
+                <p><strong>Nombre:</strong> <span id="readUsername">---</span></p>
+                <p><strong>Cuadrante:</strong> <span id="readSector">---</span></p>
+                <p><strong>Fecha de nacimiento:</strong> <span id="readBirth">---</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu -->
+    <div class="full_menu">
+        <div class="head_menu">
+            <div class="logo">
+                <img src="../imgs/index/logoBlanco.svg" alt="">
+            </div>
+            <div class="bars">
+                <i class="ri-close-large-fill close"></i>
+            </div>
+        </div>
+        <div class="main_menu">
+            <ul class="menu">
+                <li><a href="../pages/inicio.html">Inicio</a> <i class="ri-add-line"></i></li>
+                <li><a href="../pages/inicio.html#Nosotros">Nosotros</a> <i class="ri-add-line"></i></li>
+                <li><a href="../pages/inicio.html#Servicios">Dispositivo</a> <i class="ri-add-line"></i></li>
+                <li><a href="../pages/inicio.html#Clientes">Áreas de trabajo</a> <i class="ri-add-line"></i></li>
+            </ul>
+            <div class="contact">
+                <h2>INFORMACIÓN</h2>
+                <br>
+                <i class="ri-school-line"></i>
+                <p>Escuela Superior De Ingeniería Mecánica y Eléctrica Unidad Zacatenco, Instituto Politécnico Nacional, ICE - Electrónica</p>
+                <br>
+                <i class="ri-user-5-line"></i>
+                <p>Peña Paz Jorge Eduardo</p>
+                <p>López Alonso Juan</p>
+                <div class="social">
+                    <i class="ri-linkedin-fill"></i>
+                    <i class="ri-github-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conexión a la base de datos -->
+    <script type="module" src="../js/panel/firebase.js"></script>
+    <script src="../js/indexMenu.js"></script>
+</body>
+</html>
