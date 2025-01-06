@@ -24,11 +24,10 @@ int main(){
     //* Configuracion de pines de salida
     DDRA |= (1 << DDA0);                            // PA0 como salida
     DDRA |= (1 << DDA1);                            // PA1 como salida
-    DDRA |= (1 << DDA2);                            // PA2 como salida
 
     //* Configuracion del ADC
     // Configuracion del registro de ADC de seleccion de multiplexor
-    ADMUX = 0b00000011;                             // Vcc como referencia, ADC3 como canal de entrada
+    ADMUX = 0b00000010;                             // Vcc como referencia, ADC2 como canal de entrada
 
     // Configuracion del regitro A de control y status del ADC
     ADCSRA = 0b10000011;                            // ADC habilitado, con prescaler igual a 8 (125kHz)
@@ -49,7 +48,7 @@ int main(){
         int ADC_Val = (ADCH << 8) | ADC_Low;        // Combina ADCH y ADCL en un valor de 10 bits
 
         // Si el valor del ADC esta dentro del rango deseado, enciende el LED
-        if (ADC_Val >= 410 && ADC_Val <= 820) {		// Prende si el valor del ADC es (2V, ~3V)
+        if (ADC_Val >= 410 && ADC_Val <= 615) {		// Prende si el valor del ADC es (2V, ~3V)
             PORTA |= (1 << PORTA2);                 // Enciende el LED
         } else {
             PORTA &= ~(1 << PORTA2);                // Apaga el LED
