@@ -3,7 +3,7 @@
 </div>
 
 # AVANCE DE TESIS :books:
-En el siguiente repositorio se presentan los avances tanto del hardware, software y pruebas de la tesis/proyecto denominado "Construcción de un sistema de obtención y monitoreo de datos bioeléctricos a través de un brazalete y una aplicación".
+En el siguiente repositorio se presentan los avances tanto del hardware, software y pruebas de la tesis/proyecto denominado "DESARROLLO DE UN SISTEMA PARA LA OBTENCIÓN DE DATOS FOTOPLESTIMOGRÁFICOS (PPG)".
 
 Carpetas que integran el proyecto:
 <ul>
