@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    android:background="@drawable/updatebkg"
+    tools:context=".UpdateActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="300dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/referenceUsername"
+            android:background="@drawable/blue_border"
+            android:hint="Ingresé el identificador (ID)"
+            android:padding="16dp"
+            android:textColor="@color/blue"
+            android:gravity="start|center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/updateUsername"
+            android:background="@drawable/blue_border"
+            android:hint="Ingresé nombre del elemento"
+            android:padding="16dp"
+            android:textColor="@color/blue"
+            android:gravity="start|center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/updateSector"
+            android:background="@drawable/blue_border"
+            android:hint="Ingresé el sector del elemento"
+            android:padding="16dp"
+            android:textColor="@color/blue"
+            android:gravity="start|center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/updateBirthDate"
+            android:background="@drawable/blue_border"
+            android:hint="Fecha de nacimiento (DD/MM/AA)"
+            android:padding="16dp"
+            android:textColor="@color/blue"
+            android:gravity="start|center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/updateButton"
+            android:text="ACTUALIZAR"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
