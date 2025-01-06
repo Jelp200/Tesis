@@ -3,7 +3,7 @@
 </div>
 
 # AVANCE DE TESIS :books:
-En el siguiente repositorio se presentan los avances tanto del hardware, software y pruebas de la tesis/proyecto denominado <b><i>"DESARROLLO DE UN SISTEMA PARA LA OBTENCIÓN DE DATOS FOTOPLESTIMOGRÁFICOS (PPG)"</i></b>.
+En el siguiente repositorio se presentan los avances tanto del hardware, software y pruebas de la tesis/proyecto denominado <b><i>DESARROLLO DE UN SISTEMA PARA LA OBTENCIÓN DE DATOS FOTOPLESTIMOGRÁFICOS (PPG)</i></b>.
 
 Carpetas que integran el proyecto:
 <ul>
