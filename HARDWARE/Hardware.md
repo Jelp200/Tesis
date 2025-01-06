@@ -7,7 +7,6 @@ En este apartado se presentan los avances tanto del prototipado como de la versi
 
 Las carpetas que integran este apartado son:
 <ul>
-    <li><a href="Prototipado/Prototipado.md">Prototipado</a></li>
     <li><a href="Hojas de datos/">Hojas de datos</a></li>
     <li><a href="Diagramas de bloques/">Diagramas de bloques</a></li>
     <li><a href="Diagramas electricos/">Diagramas electricos</a></li>
